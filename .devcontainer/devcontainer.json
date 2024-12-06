@@ -1,0 +1,46 @@
+{
+    "name": "Advent of Code 2024",
+    "image": "mcr.microsoft.com/vscode/devcontainers/python:3-bookworm",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "streetsidesoftware.code-spell-checker",
+                "eamodio.gitlens",
+                "github.vscode-pull-request-github",
+                "github.vscode-github-actions",
+				"ms-toolsai.jupyter"
+            ],
+            "settings": {
+                "cSpell": {
+                    "customDictionaries": {
+                        "advent-of-code-2024": {
+                            "name": "advent-of-code-2024",
+                            "path": "${containerWorkspaceFolder}/.devcontainer/dictionary.txt",
+                            "scope": "workspace",
+                            "addWords": false
+                        }
+                    },
+                    "enableFiletypes": [
+                        "python",
+                        "shellscript"
+                    ],
+                    "ignoreWords": [
+                        "dbaeumer",
+                        "eamodio",
+                        "toolsai"
+                    ],
+                    "language": "en-GB"
+                },
+                "gitlens.plusFeatures.enabled": false,
+                "python.venvPath": "/home/vscode/.python/pyenv/versions"
+            }
+        }
+    },
+    "postCreateCommand": ".devcontainer/setup.sh CREATE",
+    "postStartCommand": ".devcontainer/setup.sh START",
+    "postAttachCommand": ".devcontainer/setup.sh ATTACH",
+    "waitFor": "postStartCommand",
+    "containerUser": "vscode",
+    "remoteUser": "vscode"
+}
